@@ -1,0 +1,19 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% if user.cart %}
+
+<a class="carte" href="{% url 'carte' %}"> voici votre panier </a>
+{% endif %}
+{% for product in products %}
+<h2>{{product.name}}</h2>
+<img class="img" src="{{product.thumbnail.url}}" alt="{{product.name}}">
+<a href="{{ product.get_absolute_url }}"> voir l'article pour le texte </a>
+{% endfor %}
+{% endblock %}
+<!-- url 'product' slug=product.slug -->
+ 
